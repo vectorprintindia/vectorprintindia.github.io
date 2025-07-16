@@ -71,15 +71,15 @@
   </header>
 
   <main class="main">
-  <!-- Hero Section - Stylish & Modern -->
+ <!-- Hero Section - Stylish & Modern -->
 <section id="hero" class="hero section" style="
   position: relative;
   height: 100vh;
   background-image: url('assets/img/hero-banner.webp');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: scroll; /* important for mobile */
+  background-attachment: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +87,7 @@
   overflow: hidden;
 ">
 
-  <!-- Lighter Gradient Overlay -->
+  <!-- Overlay Gradient -->
   <div style="
     position: absolute;
     top: 0; left: 0;
@@ -104,24 +104,24 @@
     padding: 0 20px;
     color: #ffffff;
   ">
-    <h1 style="
+    <h1 class="hero-heading" style="
       font-size: 3.2rem;
       font-weight: bold;
       line-height: 1.4;
       margin-bottom: 15px;
       color: #ffffff;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-    " class="hero-heading">
+    ">
       Precision Vector Artwork & Graphic Design Services
     </h1>
 
-    <p style="
+    <p class="hero-subtext" style="
       font-family: 'Poppins', sans-serif;
       font-size: 1.25rem;
       margin-bottom: 25px;
       color: #ffffff;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    " class="hero-subtext">
+    ">
       24/7 Remote Team for Global Clients
     </p>
 
@@ -146,11 +146,11 @@
 @media (max-width: 768px) {
   #hero {
     height: 100vh !important;
-    background-attachment: scroll !important; /* fix for mobile */
+    background-attachment: scroll !important;
   }
 
   .hero-heading {
-    font-size: 1.8rem !important;
+    font-size: 1.7rem !important;
     line-height: 1.3 !important;
   }
 
@@ -159,8 +159,8 @@
   }
 
   .btn-get-started {
-    font-size: 0.95rem !important;
-    padding: 10px 25px !important;
+    font-size: 0.9rem !important;
+    padding: 10px 20px !important;
   }
 }
 </style>
