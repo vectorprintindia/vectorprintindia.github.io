@@ -315,24 +315,108 @@
   </div>
   
 </section>
-<!-- Samples -->
-<section id="samples">
-  <h2 class="center">Our Work Samples</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="assets/img/sample1.webp" alt="Sample 1">
-      <p class="center">Logo Design</p>
+<!-- Sample Works Section -->
+<section id="samples" style="padding: 60px 20px; background-color: #f9f9f9; position: relative; z-index: 1;">
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h2 style="font-size: 32px; color: #222;">Our <span style="color: #e47117;">Sample Works</span></h2>
+    <p style="font-size: 18px; color: #555;">Some of our recent creative projects</p>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1100px; margin: 0 auto;">
+
+    <!-- Box 1 -->
+    <div onclick="openModal('img1')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/sample-logo-vector-tracing.jpg" alt="Logo Design" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Vector Artwork</h3>
     </div>
-    <div class="card">
-      <img src="assets/img/sample2.webp" alt="Sample 2">
-      <p class="center">Vector Tracing</p>
+
+    <!-- Box 2 -->
+    <div onclick="openModal('img2')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/car banner.jpg" alt="Vector Artwork" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Graphic Design</h3>
     </div>
-    <div class="card">
-      <img src="assets/img/sample3.webp" alt="Sample 3">
-      <p class="center">T-shirt Illustration</p>
+
+    <!-- Box 3 - Local Image -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/Car Design .jpg" alt="Custom Design" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
     </div>
+
   </div>
 </section>
+
+<!-- Popup Modal -->
+<div id="imageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center; padding: 20px;">
+  <span onclick="closeModal()" style="position:absolute; top:30px; right:40px; color:#fff; font-size:40px; font-weight:bold; cursor:pointer;">&times;</span>
+  <img id="modalImage" src="" alt="Full View" style="max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 0 20px rgba(255,255,255,0.4);">
+</div>
+
+<!-- Custom Animated Cursor -->
+<div id="customCursor" style="
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e47117;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  background-color: rgba(228, 113, 23, 0.1);
+"></div>
+
+<!-- JavaScript -->
+<script>
+  // Modal Logic
+  function openModal(id) {
+    const imgMap = {
+      img1: "assets/img/sample-logo-vector-tracing.jpg",
+      img2: "assets/img/car banner.jpg",
+      img3: "assets/img/Car Design .jpg"
+    };
+    document.getElementById("modalImage").src = imgMap[id];
+    document.getElementById("imageModal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+
+  // Box Hover Animation
+  function hoverEffect(el) {
+    el.style.transform = "translateY(-5px)";
+    el.style.boxShadow = "0 12px 24px rgba(0,0,0,0.15)";
+  }
+
+  function resetEffect(el) {
+    el.style.transform = "translateY(0)";
+    el.style.boxShadow = "0 6px 16px rgba(0,0,0,0.1)";
+  }
+
+  // Animated Custom Cursor
+  const cursor = document.getElementById('customCursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.left = `${e.clientX}px`;
+  });
+
+  const interactiveTags = ['a', 'button', 'div', 'img', 'span'];
+  interactiveTags.forEach(tag => {
+    document.querySelectorAll(tag).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+        cursor.style.backgroundColor = 'rgba(228, 113, 23, 0.3)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.backgroundColor = 'rgba(228, 113, 23, 0.1)';
+      });
+    });
+  });
+</script>
+
+
+
 
 <!-- Testimonials -->
 <section id="testimonials">
