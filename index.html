@@ -818,6 +818,85 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+<style>
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: url('https://vectorprintindia.github.io/img/banner.png') center top no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+  }
+
+  #hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  #hero h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+
+  .btn-get-started {
+    display: inline-block;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background: #1a3a6c;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .btn-get-started:hover {
+    background: #0d2a4d;
+  }
+
+  /* ✅ Mobile Fix */
+  @media (max-width: 768px) {
+    #hero {
+      height: auto !important;
+      padding: 80px 20px 60px !important;
+      background-size: cover !important;
+      background-position: center top !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #hero h1 {
+      font-size: 2rem !important;
+      line-height: 1.3 !important;
+      margin-bottom: 10px !important;
+      color: #fff !important;
+    }
+
+    #hero h2 {
+      font-size: 1rem !important;
+      margin-bottom: 20px !important;
+      padding: 0 15px !important;
+      color: #fff !important;
+    }
+
+    .btn-get-started {
+      font-size: 0.9rem !important;
+      padding: 10px 24px !important;
+    }
+  }
+</style>
 
 </body>
 
