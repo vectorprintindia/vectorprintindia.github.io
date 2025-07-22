@@ -79,35 +79,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      /* MOBILE MENU HIDE & SHOW */
-@media (max-width: 991px) {
-  .navmenu ul {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    padding: 15px;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-
-  .navmenu ul.nav-open {
-    display: flex;
-  }
-
-  .mobile-nav-toggle {
-    font-size: 1.8rem;
-    cursor: pointer;
-    display: block;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 1000;
-  }
-}
+  
 
         * {
             margin: 0;
@@ -941,18 +913,7 @@
     });
   });
 </script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.querySelector('.mobile-nav-toggle');
-    const menu = document.querySelector('.navmenu ul');
 
-    toggle.addEventListener('click', function () {
-      menu.classList.toggle('nav-open');
-      this.classList.toggle('bi-list');
-      this.classList.toggle('bi-x'); // toggle icon to 'X'
-    });
-  });
-</script>
 
     </body>
 
