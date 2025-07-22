@@ -941,6 +941,18 @@
     });
   });
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const menu = document.querySelector('.navmenu ul');
+
+    toggle.addEventListener('click', function () {
+      menu.classList.toggle('nav-open');
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x'); // toggle icon to 'X'
+    });
+  });
+</script>
 
     </body>
 
