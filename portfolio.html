@@ -34,6 +34,38 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+<style>
+  /* Mobile Nav Styles */
+.navbar-mobile {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 15px;
+  z-index: 99;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-mobile ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.navbar-mobile ul li a {
+  color: #333;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+.mobile-nav-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  color: #1a3a6c;
+}
+</style>
 
 </head>
 
@@ -68,4 +100,31 @@
       </div>
 
     </div>
+    <!-- Mobile Nav Toggle Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('#navmenu');
+
+    toggleBtn.addEventListener('click', function () {
+      navMenu.classList.toggle('navbar-mobile');
+      toggleBtn.classList.toggle('bi-list');
+      toggleBtn.classList.toggle('bi-x');
+    });
+
+    // Close menu on link click (optional)
+    document.querySelectorAll('#navmenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('navbar-mobile')) {
+          navMenu.classList.remove('navbar-mobile');
+          toggleBtn.classList.add('bi-list');
+          toggleBtn.classList.remove('bi-x');
+        }
+      });
+    });
+  });
+</script>
+
   </header>
+</body
+  
