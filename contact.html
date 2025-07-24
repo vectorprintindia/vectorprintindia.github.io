@@ -181,6 +181,8 @@
     .header {
       background: white;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1000;
     }
     
     .navmenu ul {
@@ -190,6 +192,7 @@
     
     .mobile-nav-toggle {
       display: none;
+      cursor: pointer;
     }
     
     @media (max-width: 768px) {
@@ -204,9 +207,27 @@
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
         transition: 0.3s;
         padding-top: 4rem;
+        z-index: 999;
       }
       
-
+      .navmenu ul.active {
+        right: 0;
+      }
+      
+      .mobile-nav-toggle {
+        display: block;
+        font-size: 1.5rem;
+        z-index: 1000;
+      }
+      
+      .navmenu li {
+        padding: 15px 20px;
+      }
+      
+      .navmenu li a {
+        display: block;
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -220,14 +241,14 @@
       </a>
 
       <nav id="navmenu" class="navmenu">
-        <ul>
+        <ul id="mobile-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" id="toggle-icon"></i>
       </nav>
 
       <div class="header-social-links">
@@ -289,7 +310,7 @@
     </div>
   </main>
 
-
+ 
 
 
 
@@ -614,31 +635,44 @@
 
   <!-- Custom Script for Mobile Navigation -->
   <script>
-    // Mobile navigation toggle
-    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-    const navmenu = document.querySelector('.navmenu ul');
-    
-    if (mobileNavToggle) {
-      mobileNavToggle.addEventListener('click', function(e) {
-        navmenu.classList.toggle('active');
-        this.classList.toggle('bi-list');
-        this.classList.toggle('bi-x');
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navmenu = document.querySelector('.navmenu ul');
+      const toggleIcon = document.getElementById('toggle-icon');
+      const menuLinks = document.querySelectorAll('#mobile-menu a');
+      
+      // Toggle mobile menu
+      if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', function(e) {
+          navmenu.classList.toggle('active');
+          toggleIcon.classList.toggle('bi-list');
+          toggleIcon.classList.toggle('bi-x');
+        });
+      }
+      
+      // Close menu when clicking on links
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navmenu.classList.remove('active');
+          toggleIcon.classList.remove('bi-x');
+          toggleIcon.classList.add('bi-list');
+        });
       });
-    }
-    
-    // Show selected file name
-    const fileInput = document.getElementById('file-input');
-    const fileLabel = document.getElementById('file-label');
-    
-    if (fileInput) {
-      fileInput.addEventListener('change', function() {
-        if (this.files.length > 0) {
-          fileLabel.innerHTML = `<i class="bi bi-paperclip"></i> ${this.files[0].name}`;
-        } else {
-          fileLabel.innerHTML = `<i class="bi bi-paperclip"></i> Attach Files (JPG, PNG, AI, EPS)`;
-        }
-      });
-    }
+      
+      // Show selected file name
+      const fileInput = document.getElementById('file-input');
+      const fileLabel = document.getElementById('file-label');
+      
+      if (fileInput) {
+        fileInput.addEventListener('change', function() {
+          if (this.files.length > 0) {
+            fileLabel.innerHTML = `<i class="bi bi-paperclip"></i> ${this.files[0].name}`;
+          } else {
+            fileLabel.innerHTML = `<i class="bi bi-paperclip"></i> Attach Files (JPG, PNG, AI, EPS)`;
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>
