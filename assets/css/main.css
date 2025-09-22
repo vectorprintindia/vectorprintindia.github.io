@@ -1409,34 +1409,33 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-/* ===== Mobile View Fix ===== */
+/* ===== Mobile Fix ===== */
 @media (max-width: 768px) {
 
-  /* Header Image */
-  header img {
-    max-width: 90%;   /* thodu nanun */
-    height: auto;
-  }
-
-  /* Hero / Header Text */
-  .hero-text, 
-  .hero-section h1,
-  .hero-section h2 {
-    font-size: 18px;   /* text nanun */
-    line-height: 1.4;
-    padding: 0 10px;   /* margin thi text cut na thay */
-  }
-
-  /* Page Width Fix */
-  body {
+  /* Header Section Full Width */
+  body, html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;  /* cut prevent */
+    overflow-x: hidden;
   }
 
-  .container, .hero-section {
-    max-width: 100%;
-    padding: 0 12px; /* content safe */
+  /* Hero Banner Text (Global fix) */
+  h1, h2, h3, p {
+    font-size: 18px !important;  /* force small */
+    line-height: 1.4 !important;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Container */
+  div, section {
+    max-width: 100% !important;
+    padding-left: 10px;
+    padding-right: 10px;
     box-sizing: border-box;
   }
 }
