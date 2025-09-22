@@ -43,11 +43,8 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" class="active">About</a></li>
-
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
-         
-            
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -191,7 +188,7 @@
 
  
 
-  <!-- Hero Section with Local Image -->
+ 
   <section class="hero">
     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="VectorPrint India - affordable vector design USA">
     <div class="hero-content">
@@ -208,7 +205,7 @@
   <p>
     At <strong>Vector Print Studio</strong>, We deliver world-class 
     <strong>Design Services in Houston, TX</strong>, USA, Canada, UK, and Australia. 
-    From <span style="color:#e47117;">vector artwork services, custom logo design, embroidery digitizing, promotional mockup/virtual proof, and professional business-level web design solution</span>, 
+    From vector artwork services, custom logo design, embroidery digitizing, promotional mockup/virtual proof, and professional business-level web design solution</span>, 
     we help startup and businesses around the globe shine.
   </p>
 
@@ -320,25 +317,154 @@
 
   </main>
 
- <div class="cta-form" style="max-width: 600px; margin: 40px auto; background: #fff; padding: 30px 25px; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.08); font-family: 'Segoe UI', sans-serif;">
-  <h2 style="text-align: center; font-size: 26px; color: #222; margin-bottom: 25px;">FREE QUOTE & SAMPLE</h2>
-  <form action="https://formsubmit.co/hello.vectorprint@gmail.com" method="POST" enctype="multipart/form-data">
-    <input type="text" name="Name" placeholder="Your Name" required style="width: 100%; padding: 12px 15px; margin: 8px 0; border: 1px solid #ccc; border-radius: 10px; font-size: 15px;">
-    <input type="tel" name="Mobile" placeholder="Mobile Number" style="width: 100%; padding: 12px 15px; margin: 8px 0; border: 1px solid #ccc; border-radius: 10px; font-size: 15px;">
-    <input type="email" name="Email" placeholder="Your Email" required style="width: 100%; padding: 12px 15px; margin: 8px 0; border: 1px solid #ccc; border-radius: 10px; font-size: 15px;">
-    <input type="text" name="Requirement" placeholder="Requirement (e.g., Vectorize Logo, Design Banner...)" required style="width: 100%; padding: 12px 15px; margin: 8px 0; border: 1px solid #ccc; border-radius: 10px; font-size: 15px;">
-    <textarea name="Message" placeholder="Your Message" rows="4" style="width: 100%; padding: 12px 15px; margin: 8px 0; border: 1px solid #ccc; border-radius: 10px; font-size: 15px;"></textarea>
+<!-- VectorPrint India Stylish Free Trial Form -->
+<form id="freeTrialForm" style="max-width:600px;margin:50px auto;padding:40px;border-radius:16px;background:#f9f9f9;box-shadow:0 15px 25px rgba(0,0,0,0.2);font-family:Arial,sans-serif;transition:0.3s;">
+  <h2 style="text-align:center;color:#007BFF;margin-bottom:25px;font-size:28px;">Start Free Trial / ZERO COST 😍</h2>
 
-    <!-- Custom file upload style -->
-    <label style="display: block; background: #f0f0f0; padding: 12px 15px; margin: 10px 0; border-radius: 10px; border: 1px solid #ccc; font-size: 15px; cursor: pointer; text-align: center;">
-      📎 Attach File
-      <input type="file" name="attachment" style="display: none;">
-    </label>
+  <!-- Floating input fields -->
+  <div style="position:relative;margin-bottom:20px;">
+    <input type="text" name="name" required style="width:100%;padding:14px 12px;border:1px solid #ccc;border-radius:8px;outline:none;transition:0.3s;">
+    <label style="position:absolute;top:14px;left:12px;color:#555;pointer-events:none;transition:0.3s;">Your Name</label>
+  </div>
 
-    <button type="submit" style="width: 100%; padding: 14px; background: #2a72f8; color: #fff; font-size: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; margin-top: 15px; transition: background 0.3s;">
-      Submit Request
-    </button>
-  </form>
+  <div style="position:relative;margin-bottom:20px;">
+    <input type="email" name="email" required style="width:100%;padding:14px 12px;border:1px solid #ccc;border-radius:8px;outline:none;transition:0.3s;">
+    <label style="position:absolute;top:14px;left:12px;color:#555;pointer-events:none;transition:0.3s;">Your Email</label>
+  </div>
+
+  <div style="position:relative;margin-bottom:20px;">
+    <input type="text" name="phone" style="width:100%;padding:14px 12px;border:1px solid #ccc;border-radius:8px;outline:none;transition:0.3s;">
+    <label style="position:absolute;top:14px;left:12px;color:#555;pointer-events:none;transition:0.3s;">Your Phone</label>
+  </div>
+
+  <div style="position:relative;margin-bottom:20px;">
+    <textarea name="message" style="width:100%;padding:14px 12px;border:1px solid #ccc;border-radius:8px;outline:none;transition:0.3s;" rows="4"></textarea>
+    <label style="position:absolute;top:14px;left:12px;color:#555;pointer-events:none;transition:0.3s;">Your Message</label>
+  </div>
+
+  <div style="margin-bottom:20px;">
+   <input type="file" name="file" 
+  accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff,.svg,
+          .pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,
+          .ai,.eps,.psd,.cdr,.indd,
+          .zip,.rar"
+  style="width:100%;padding:10px;border:1px solid #ccc;
+         border-radius:8px;cursor:pointer;display:block;
+         color:#333;background:#fff;">
+
+  </div>
+
+  <button type="submit"
+    style="width:100%;padding:16px;background:#007BFF;color:#fff !important;border:none;border-radius:10px;
+    font-size:18px;font-weight:bold;cursor:pointer;display:flex;justify-content:center;align-items:center;">
+    Start Free Trial
+  </button>
+</form>
+
+<!-- Success Popup -->
+<div id="successPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:#fff;padding:30px;border-radius:12px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.3);">
+    <h3 style="color:#28a745;margin-bottom:15px;">🎉 Request Sent Successfully!</h3>
+    <p style="font-size:16px;color:#333;margin-bottom:20px;">Thank you for starting your free trial. Our team will contact you shortly. 🚀</p>
+    <button onclick="closePopup()" style="padding:10px 20px;background:#007BFF;color:#fff;border:none;border-radius:8px;font-size:16px;cursor:pointer;">OK</button>
+  </div>
+</div>
+
+<script>
+// Floating label animation
+const inputs = document.querySelectorAll('#freeTrialForm input, #freeTrialForm textarea');
+inputs.forEach(input => {
+  const label = input.nextElementSibling;
+  input.addEventListener('focus', () => {
+    input.style.borderColor = '#007BFF';
+    input.style.boxShadow = '0 0 10px rgba(0,123,255,0.3)';
+    if(label){
+      label.style.top = '-10px';
+      label.style.left = '10px';
+      label.style.fontSize = '12px';
+      label.style.color = '#007BFF';
+    }
+  });
+  input.addEventListener('blur', () => {
+    if(!input.value && label){
+      label.style.top = '14px';
+      label.style.left = '12px';
+      label.style.fontSize = '14px';
+      label.style.color = '#555';
+    }
+    input.style.borderColor = '#ccc';
+    input.style.boxShadow = 'none';
+  });
+});
+
+// Form submission
+const form = document.getElementById("freeTrialForm");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const fileInput = form.querySelector('input[name="file"]');
+  const file = fileInput.files[0];
+  if(file){
+    const reader = new FileReader();
+    reader.onload = function(evt){
+      sendData(evt.target.result.split(',')[1], file);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    sendData();
+  }
+});
+
+function sendData(fileBase64, file){
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    message: form.message.value,
+    fileBase64: fileBase64 || "",
+    fileName: file ? file.name : "",
+    fileType: file ? file.type : ""
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbxnhdj683NRNaG4-76-ZR5pcBl63dCKO6cSmjEF3ndM-hlx5wtM7YZNn4eJTFW45qA0og/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(res => {
+    if(res.status === "success"){
+      form.reset();
+      // Reset floating labels
+      inputs.forEach(input => {
+        const label = input.nextElementSibling;
+        if(label){
+          label.style.top = '14px';
+          label.style.left = '12px';
+          label.style.fontSize = '14px';
+          label.style.color = '#555';
+        }
+      });
+      showPopup();
+    } else {
+      alert("Error! Please try again.");
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Error! Please try again.");
+  });
+}
+
+// Show popup
+function showPopup(){
+  document.getElementById("successPopup").style.display = "flex";
+}
+
+// Close popup
+function closePopup(){
+  document.getElementById("successPopup").style.display = "none";
+}
+</script>
+
 </div>
 
 
