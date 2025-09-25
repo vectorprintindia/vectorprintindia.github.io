@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vector Print Studio - Vector Artwork & Design Services in Houston TX</title>
-    <meta name="description" content="Professional vector tracing, logo redraw, and graphic design services in Houston TX. 24/7 remote team for USA, Canada, UK, and Australia clients.">
-    <meta name="keywords" content="vector tracing Houston, logo redraw Texas, graphic design USA, embroidery digitizing Houston">
+    <title>Portfolio | Vector Artwork & Logo Redraw Services | USA, Canada, Australia, UK</title>
+    <meta name="description" content="View our portfolio of vector artwork, logo redraws, embroidery digitizing, and graphic design projects. Serving clients in USA, Canada, UK, and Australia.">
+    <meta name="keywords" content="vector artwork portfolio, logo design examples, embroidery digitizing samples, graphic design projects USA">
+
+    <!-- Favicon -->
+    <link href="assets/img/print1.png" rel="icon">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -201,9 +204,9 @@
             color: white;
         }
         
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+        /* Portfolio Hero Section */
+        .portfolio-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -211,110 +214,54 @@
             text-align: center;
         }
         
-        .hero h1 {
+        .portfolio-hero h1 {
             font-size: 2.8rem;
             color: white;
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
         
-        .hero p {
+        .portfolio-hero p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto 30px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         
-        .hero-btns {
+        /* Portfolio Filter */
+        .portfolio-filter {
+            background: white;
+            padding: 40px 0;
+        }
+        
+        .filter-buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
             flex-wrap: wrap;
+            gap: 15px;
         }
         
-        /* About Section */
-        .about {
-            background: white;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-image {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .about-image img {
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .features-list {
-            list-style: none;
-            margin: 20px 0;
-        }
-        
-        .features-list li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .features-list li:before {
-            content: '✓';
-            color: var(--secondary);
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        .filter-btn {
+            padding: 10px 25px;
+            background: var(--light);
+            border: none;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
         
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--secondary);
+            color: white;
         }
         
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-        
-        .service-card h3 {
-            font-size: 1.3rem;
-        }
-        
-        /* Portfolio Section */
-        .portfolio {
-            background: var(--light);
-        }
-        
+        /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
         }
         
         .portfolio-item {
@@ -322,7 +269,8 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            height: 250px;
+            height: 300px;
+            background: white;
         }
         
         .portfolio-item img {
@@ -333,7 +281,7 @@
         }
         
         .portfolio-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         
         .portfolio-overlay {
@@ -344,10 +292,13 @@
             height: 100%;
             background: rgba(0,0,0,0.7);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s ease;
+            padding: 20px;
+            text-align: center;
         }
         
         .portfolio-item:hover .portfolio-overlay {
@@ -356,12 +307,111 @@
         
         .portfolio-overlay h3 {
             color: white;
-            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
         }
         
-        .portfolio-btn {
-            text-align: center;
-            margin-top: 40px;
+        .portfolio-overlay p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-overlay .btn {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Portfolio Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 50px 0;
+        }
+        
+        .modal-content {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.2rem;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            background: #f5f5f5;
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .modal-category {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .modal-description {
+            margin-bottom: 20px;
+        }
+        
+        .modal-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .detail-item {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .detail-item h4 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .detail-item p {
+            margin: 0;
+            font-size: 0.9rem;
         }
         
         /* Testimonials */
@@ -403,115 +453,26 @@
             color: var(--primary);
         }
         
-        /* Process Section */
-        .process {
-            background: var(--light);
-        }
-        
-        .process-steps {
-            display: flex;
-            justify-content: space-between;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .process-steps:before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 10%;
-            width: 80%;
-            height: 2px;
-            background: var(--secondary);
-            z-index: 1;
-        }
-        
-        .step {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            flex: 1;
-        }
-        
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--primary);
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(26, 58, 108, 0.9), rgba(26, 58, 108, 0.9)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0 auto 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 80px 0;
         }
         
-        .step h3 {
-            font-size: 1.2rem;
-        }
-        
-        /* Contact Form */
-        .contact {
-            background: white;
-        }
-        
-        .contact-form {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--light);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
+        .cta h2 {
+            color: white;
+            font-size: 2.2rem;
             margin-bottom: 20px;
         }
         
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(228, 113, 23, 0.1);
-        }
-        
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-        
-        .submit-btn:hover {
-            background: var(--secondary);
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
         }
         
         /* Footer */
@@ -611,23 +572,8 @@
         
         /* Mobile Styles */
         @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .features-list {
-                text-align: left;
-                display: inline-block;
-            }
-            
-            .process-steps {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .process-steps:before {
-                display: none;
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
         
@@ -663,11 +609,11 @@
                 display: none;
             }
             
-            .hero h1 {
+            .portfolio-hero h1 {
                 font-size: 2.2rem;
             }
             
-            .hero p {
+            .portfolio-hero p {
                 font-size: 1rem;
             }
             
@@ -679,24 +625,31 @@
                 font-size: 1.8rem;
             }
             
-            .contact-form {
-                padding: 30px 20px;
+            .modal-body {
+                padding: 20px;
             }
         }
         
         @media (max-width: 576px) {
-            .hero {
+            .portfolio-hero {
                 padding: 150px 0 80px;
             }
             
-            .hero h1 {
+            .portfolio-hero h1 {
                 font-size: 1.8rem;
             }
             
-            .services-grid,
-            .portfolio-grid,
-            .testimonial-grid {
+            .portfolio-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
             }
             
             .footer-content {
@@ -723,10 +676,10 @@
             </div>
             
             <ul class="nav-menu">
-                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             
@@ -737,220 +690,147 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Portfolio Hero Section -->
+    <section class="portfolio-hero">
         <div class="container">
-            <h1>Vector Artwork & Design Services in Houston TX</h1>
-            <p>Professional graphic design solutions for businesses in Houston and beyond. From vector artwork to web design, we bring your ideas to life.</p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn">Start Your Free Trial</a>
-                <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
+            <h1>Our Portfolio</h1>
+            <p>Explore our collection of vector artwork, logo designs, embroidery digitizing, and graphic design projects created for clients worldwide.</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <section class="portfolio-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="vector">Vector Artwork</button>
+                <button class="filter-btn" data-filter="logo">Logo Design</button>
+                <button class="filter-btn" data-filter="embroidery">Embroidery Digitizing</button>
+                <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+                <button class="filter-btn" data-filter="mockup">Product Mockups</button>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About VectorPrint Studio</h2>
-                    <p>Our team works remotely from India with client management in Texas, USA. We provide top-quality graphic and web design services worldwide, keeping clients happy.</p>
-                    <ul class="features-list">
-                        <li>100% Manual Vector Tracing</li>
-                        <li>24/7 Global Remote Team</li>
-                        <li>Fast Turnaround & Reliable Support</li>
-                        <li>Professional Quality Guaranteed</li>
-                    </ul>
-                    <a href="contact.html" class="btn">Get in Touch</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://vectorprintindia.in/assets/img/Vector%20Print%20India.png" alt="Vector Print Studio">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Comprehensive design solutions for all your business needs</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🖼️</div>
-                    <h3>Vector Tracing</h3>
-                    <p>Clean vectorization of raster images, suitable for screen printing, vinyl, engraving, and more.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📝</div>
-                    <h3>Logo Redraw</h3>
-                    <p>Convert blurry logos into crisp vector files like AI, EPS, SVG, and PDF.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🧵</div>
-                    <h3>Embroidery Digitizing</h3>
-                    <p>Perfect DST & EMB files for embroidery machines with accurate stitching.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📦</div>
-                    <h3>Business & Marketing Design</h3>
-                    <p>Designs for brochures, flyers, packaging, signage, social posts & mockups.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>Web Design & SEO</h3>
-                    <p>Responsive, modern websites with search engine optimization support.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🗂️</div>
-                    <h3>Admin & Data Support</h3>
-                    <p>PO entry, back-office help, data entry tasks for your day-to-day operations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+   
     <!-- Portfolio Section -->
-    <section class="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Portfolio</h2>
-                <p>Check out some of our recent work</p>
-            </div>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Vector Artwork">
-                    <div class="portfolio-overlay">
-                        <h3>Vector Artwork</h3>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Logo Design">
-                    <div class="portfolio-overlay">
-                        <h3>Logo Design</h3>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Product Mockup">
-                    <div class="portfolio-overlay">
-                        <h3>Product Mockup</h3>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="portfolio-btn">
-                <a href="portfolio.html" class="btn">View Full Portfolio</a>
-            </div>
-        </div>
-    </section>
+<section id="samples" style="padding: 60px 20px; background-color: #f9f9f9; position: relative; z-index: 1;">
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h2 style="font-size: 32px; color: #222;">Our <span style="color: #e47117;">Sample Works</span></h2>
+    <p style="font-size: 18px; color: #555;">Some of our recent creative projects</p>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1100px; margin: 0 auto;">
+
+    <!-- Box 1 -->
+    <div onclick="openModal('img1')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/sample-logo-vector-tracing.jpg" alt="vector artwork tracing in canada, sandly au,uk, Tx-usa" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Vector Artwork</h3>
+    </div>
+
+    <!-- Box 2 -->
+    <div onclick="openModal('img2')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/car banner.jpg" alt="Promotional mockup , virtual proof and business promotional product design services in usa, sandy australia" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Graphic Design</h3>
+    </div>
+
+    <!-- Box 3 - Local Image -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
+    </div>
+
+     <!-- Box 3 - Local Image -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
+    </div>
+
+     <!-- Box 3 - Local Image -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
+    </div>
+
+     <!-- Box 3 - Local Image -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
+    </div>
+
+     <!-- Box 3 - Local Image -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
+    </div>
+
+     <!-- Box 3 - Local Image -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
+    </div>
+
+     <!-- Box 3 - Local Image -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
+    </div>
+
+    
+  </div>
+   <div style="text-align: center; margin-top: 40px;">
+  <a href="portfolio.html" style="
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(to right, #2a72f8, #3fa6f9);
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+  ">
+    👉 More Portfolios
+  </a>
+</div>
+</section>
 
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>What Our Clients Say</h2>
-                <p>We take pride in delivering exceptional results</p>
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about our work</p>
             </div>
             
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p>"VectorPrint India delivered exactly what I needed. Super fast and great communication!"</p>
-                    <div class="testimonial-author">- Mark T., USA</div>
+                    <p>"The vector artwork provided was exactly what we needed for our large format printing. The attention to detail was impressive."</p>
+                    <div class="testimonial-author">Mark T. (Houston, TX)</div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <p>"Excellent tracing and color accuracy. My go-to team for vector jobs."</p>
-                    <div class="testimonial-author">- Linda P., UK</div>
+                    <p>"Our logo looks crisp and professional across all platforms after the vector conversion. Great service and fast turnaround!"</p>
+                    <div class="testimonial-author">Sarah K. (Toronto, Canada)</div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <p>"Professional service with quick turnaround. Highly recommended for all design needs."</p>
-                    <div class="testimonial-author">- Sarah K., Australia</div>
+                    <p>"The embroidery digitizing work was perfect for our company uniforms. The stitching came out clean and precise."</p>
+                    <div class="testimonial-author">James L. (London, UK)</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process">
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>How It Works</h2>
-                <p>Simple process to get your project started</p>
-            </div>
-            
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Send Requirements</h3>
-                    <p>Share your design files or requirements with us</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Get Free Quote</h3>
-                    <p>We'll provide a free quote and timeline</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Approve & Receive</h3>
-                    <p>Approve the quote and receive your final design</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Start Your Free Trial</h2>
-                <p>Get in touch with us for a free quote</p>
-            </div>
-            
-            <div class="contact-form">
-                <form id="freeTrialForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Your Phone</label>
-                        <input type="text" id="phone" name="phone" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" class="form-control"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="file">Upload File (Optional)</label>
-                        <input type="file" id="file" name="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff,.svg,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.ai,.eps,.psd,.cdr,.indd,.zip,.rar">
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Start Free Trial</button>
-                </form>
-            </div>
+            <h2>Ready to Start Your Project?</h2>
+            <p>Contact us today for a free quote and let's bring your design ideas to life.</p>
+            <a href="contact.html" class="btn">Get Free Quote</a>
         </div>
     </section>
 
@@ -960,7 +840,7 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>About Us</h3>
-                    <p>VectorPrint India offers high-quality graphic design, vector tracing, logo redraws, mockups, web solutions, and back-office support to clients across the globe.</p>
+                    <p>Vector Print Studio offers high-quality graphic design, vector tracing, logo redraws, mockups, web solutions, and back-office support to clients across the globe.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://wa.me/918141595426" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -994,8 +874,8 @@
                 <div class="footer-col">
                     <h3>Contact Us</h3>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> Houston, TX & Virpur, Gujarat, India</li>
-                        <li><i class="fas fa-phone-alt"></i> +91 81415 95426</li>
+                        <li><i class="fas fa-map-marker-alt"></i><p>V.O. Houston, TX & Production Office in Virpur, Gujarat, India</p></li> 
+                         <li><i class="fas fa-phone-alt"></i> +91 81415 95426</li>
                         <li><i class="fas fa-envelope"></i> hello@vectorprintindia.in</li>
                         <li><i class="fas fa-clock"></i> Mon–Fri: 9:00 AM – 6:00 PM (CDT)</li>
                     </ul>
@@ -1003,10 +883,12 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 Vector Print Studio. All Rights Reserved. | Serving Houston TX and surrounding areas</p>
+                <p>&copy; 2025 Vector Print Studio. All Rights Reserved. | Serving Houston TX and Worldwide</p>
             </div>
         </div>
     </footer>
+
+   
 
     <!-- JavaScript -->
     <script>
@@ -1022,23 +904,22 @@
             });
         });
         
-        // Form Submission
-        document.getElementById('freeTrialForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            
-            // Simple validation
-            if (!formData.get('name') || !formData.get('email')) {
-                alert('Please fill in all required fields.');
-                return;
+       
+      
+       
+        
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
             }
-            
-            // In a real implementation, you would send this data to a server
-            // For this example, we'll just show a success message
-            alert('Thank you for your submission! We will contact you shortly.');
-            this.reset();
         });
         
         // Smooth scrolling for anchor links
