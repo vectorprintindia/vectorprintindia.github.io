@@ -1,154 +1,185 @@
- <!-- Portfolio Section -->
-<section id="samples" style="padding: 60px 20px; background-color: #f9f9f9; position: relative; z-index: 1;">
-  <div style="text-align: center; margin-bottom: 40px;">
-    <h2 style="font-size: 32px; color: #222;">Our <span style="color: #e47117;">Sample Works</span></h2>
-    <p style="font-size: 18px; color: #555;">Some of our recent creative projects</p>
-  </div>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1100px; margin: 0 auto;">
 
-    <!-- Box 1 -->
-    <div onclick="openModal('img1')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/portfolios/Car Design .webp" alt="vector artwork in canada,sandly au,uk,logo design houson tx,remove background services dallas tx" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Vector Artwork</h3> <p>High-detail vector illustration with a modern artistic touch</p>
-                
+
+    <!--Free Trial Form -->
+    <form id="freeTrialForm" style="max-width:600px;margin:50px auto;padding:40px;border-radius:16px;background:#f9f9f9;box-shadow:0 15px 25px rgba(0,0,0,0.2);font-family:Arial,sans-serif;transition:0.3s;">
+      <h2 style="text-align:center;color:#007BFF;margin-bottom:25px;font-size:28px;">Start Free Trial / ZERO COST 😍</h2>
+
+      <!-- Floating input fields -->
+      <div style="position:relative;margin-bottom:20px;">
+        <input type="text" name="name" required style="width:100%;padding:14px 12px;border:1px solid #ccc;border-radius:8px;outline:none;transition:0.3s;">
+        <label style="position:absolute;top:14px;left:12px;color:#555;pointer-events:none;transition:0.3s;">Your Name</label>
+      </div>
+
+      <div style="position:relative;margin-bottom:20px;">
+        <input type="email" name="email" required style="width:100%;padding:14px 12px;border:1px solid #ccc;border-radius:8px;outline:none;transition:0.3s;">
+        <label style="position:absolute;top:14px;left:12px;color:#555;pointer-events:none;transition:0.3s;">Your Email</label>
+      </div>
+
+      <div style="position:relative;margin-bottom:20px;">
+        <input type="text" name="phone" style="width:100%;padding:14px 12px;border:1px solid #ccc;border-radius:8px;outline:none;transition:0.3s;">
+        <label style="position:absolute;top:14px;left:12px;color:#555;pointer-events:none;transition:0.3s;">Your Phone</label>
+      </div>
+
+      <div style="position:relative;margin-bottom:20px;">
+        <textarea name="message" style="width:100%;padding:14px 12px;border:1px solid #ccc;border-radius:8px;outline:none;transition:0.3s;" rows="4"></textarea>
+        <label style="position:absolute;top:14px;left:12px;color:#555;pointer-events:none;transition:0.3s;">Your Message</label>
+      </div>
+
+      <div style="margin-bottom:20px;">
+       <input type="file" name="file" 
+      accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff,.svg,
+              .pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,
+              .ai,.eps,.psd,.cdr,.indd,
+              .zip,.rar"
+      style="width:100%;padding:10px;border:1px solid #ccc;
+             border-radius:8px;cursor:pointer;display:block;
+             color:#333;background:#fff;">
+      </div>
+
+      <button type="submit" id="submitButton"
+        style="width:100%;padding:16px;background:#007BFF;color:#fff !important;border:none;border-radius:10px;
+        font-size:18px;font-weight:bold;cursor:pointer;display:flex;justify-content:center;align-items:center;">
+        <span id="buttonText">Start Free Trial</span>
+      </button>
+    </form>
+
+    <!-- Success Popup -->
+    <div id="successPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+      <div style="background:#fff;padding:30px;border-radius:12px;max-width:400px;width:90%;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.3);">
+        <h3 style="color:#28a745;margin-bottom:15px;">🎉 Request Sent Successfully!</h3>
+        <p style="font-size:16px;color:#333;margin-bottom:20px;">Thank you for starting your free trial. Our team will contact you shortly. 🚀</p>
+        <button onclick="closePopup()" style="padding:10px 20px;background:#007BFF;color:#fff;border:none;border-radius:8px;font-size:16px;cursor:pointer;">OK</button>
+      </div>
     </div>
 
-    <!-- Box 2 -->
-    <div onclick="openModal('img2')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/portfolios/Flyer Poster Design Services.webp" alt="vector artwork poster design and event branding in Los Angeles, Dallas, Melbourne, and Miami" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Graphic Design</h3> <p>Bold and sleek poster artwork inspired by Ferrari aesthetics</p>
-    </div>
 
-    <!-- Box 3  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/portfolios/logo Vector Tracing USA.webp" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support australiya sandy, canada" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Unique vintage-style vector art created for apparel and merchandise</p>
 
-    </div>
+
+
+
+
+
     
-    <!-- Box 4  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/portfolios/Vector Artwork Logo Design Services California.webp" alt="vector logo design in Houston, Alberta, South Africa, and Chicago, australia" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Custom vector logo crafted for a professional transportation business </p>
 
-    </div>
+    <script>
+    // Floating label animation
+    const inputs = document.querySelectorAll('#freeTrialForm input, #freeTrialForm textarea');
+    inputs.forEach(input => {
+      const label = input.nextElementSibling;
+      input.addEventListener('focus', () => {
+        input.style.borderColor = '#007BFF';
+        input.style.boxShadow = '0 0 10px rgba(0,123,255,0.3)';
+        if(label){
+          label.style.top = '-10px';
+          label.style.left = '10px';
+          label.style.fontSize = '12px';
+          label.style.color = '#007BFF';
+        }
+      });
+      input.addEventListener('blur', () => {
+        if(!input.value && label){
+          label.style.top = '14px';
+          label.style.left = '12px';
+          label.style.fontSize = '14px';
+          label.style.color = '#555';
+        }
+        input.style.borderColor = '#ccc';
+        input.style.boxShadow = 'none';
+      });
+    });
+
+    // Form submission
+    const form = document.getElementById("freeTrialForm");
+    const submitButton = document.getElementById("submitButton");
+    const buttonText = document.getElementById("buttonText");
     
-    <!-- Box 5  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/portfolios/Logo Design - Divine Posh.webp" alt="luxury salon and beauty brand logo design for premium hair businesses in Florida, Ontario, New York City, and Melbourne" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Elegant brand identity created for a premium hair and beauty business</p>
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      
+      // Show loading state on button
+      submitButton.disabled = true;
+      buttonText.innerHTML = '<span class="spinner"></span> Processing...';
+      
+      // Show success popup immediately
+      setTimeout(() => {
+        showPopup();
+        
+        // Reset form
+        form.reset();
+        
+        // Reset floating labels
+        inputs.forEach(input => {
+          const label = input.nextElementSibling;
+          if(label){
+            label.style.top = '14px';
+            label.style.left = '12px';
+            label.style.fontSize = '14px';
+            label.style.color = '#555';
+          }
+        });
+        
+        // Reset button after a short delay
+        setTimeout(() => {
+          submitButton.disabled = false;
+          buttonText.textContent = 'Start Free Trial';
+        }, 2000);
+      }, 500); // Small delay to simulate processing
+      
+      // Send data to Google Apps Script in background
+      sendDataToGoogle();
+    });
 
-    </div>
-    
-    <!-- Box 6  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/portfolios/Raster-to-Vector-Artwork-01.webp" alt="detailed embroidery-ready vector artwork for patches and events in Washington D.C., Denver, Sydney, and British Columbia, australia sandy" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3> <p>High-accuracy vector recreation of a patch-style logo for scalable use</p>
+    function sendDataToGoogle() {
+      const fileInput = form.querySelector('input[name="file"]');
+      const file = fileInput.files[0];
+      
+      if(file){
+        const reader = new FileReader();
+        reader.onload = function(evt){
+          sendData(evt.target.result.split(',')[1], file);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        sendData();
+      }
+    }
 
-    </div>
-    
-    <!-- Box 7  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/portfolios/image-raster-to-vector-services-usa.webp" alt="high-quality vector logo conversion service businesses in Texas, Vancouver, Miami, Melbourne, and South Africa-sandy Australia" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Clean and scalable vector conversion for handyman business logo design</p>
+    function sendData(fileBase64, file){
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value,
+        fileBase64: fileBase64 || "",
+        fileName: file ? file.name : "",
+        fileType: file ? file.type : ""
+      };
 
-    </div>
-    
-    <!-- Box 8  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/portfolios/raster-to-vector-conversion-low-rush-image-to-EPS.webp" alt="detailed vector logo design tracing for apparel and merchandise in Houston, Dallas, Chicago, Sydney, and Toronto-canada" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Clean vector redraw of a bold sports-themed logo for apparel and merchandise</p>
+      fetch("https://script.google.com/macros/s/AKfycbxnhdj683NRNaG4-76-ZR5pcBl63dCKO6cSmjEF3ndM-hlx5wtM7YZNn4eJTFW45qA0og/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(res => {
+        // Data sent successfully (we don't need to show anything to user)
+        console.log("Data sent to Google Sheets successfully");
+      })
+      .catch(err => {
+        console.error("Error sending data to Google Sheets:", err);
+        // We don't show error to user since we already showed success
+      });
+    }
 
-    </div>
+    // Show popup
+    function showPopup(){
+      document.getElementById("successPopup").style.display = "flex";
+    }
 
+    // Close popup
+    function closePopup(){
+      document.getElementById("successPopup").style.display = "none";
+    }
+    </script>
 
-<!-- Box 9  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img//portfolios/Raster-to-Vector-Artwork.webp" alt="high-impact vector logo for sports teams, schools, and apparel in New York, Calgary, Brisbane, Los Angeles, and Ontario" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>   <p>Bold vector recreation of a sports mascot logo for apparel, print, and team branding</p>
-
-    </div>
-    
-    <!-- Box 10  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/portfolios/Detailed-Vector-Tracing-Artwork-Provider.webp" alt="Low Rush logo manually vector traced for apparel printing and branding in USA, Canada, Australia, South Africa, and more" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Low Rush Logo Manual Vector Tracing</p>
-
-    </div>
-    
-    <!-- Box 11  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img//portfolios/logo design services in canada .webp" alt="luxury bar and lounge logo design for nightlife branding in New York, Dubai, London, Toronto, and Los Angeles" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3> <p>Refined and stylish logo created for a modern bar and lounge, blending luxury with nightlife appeal.</p>
-
-    </div>
-    
-    <!-- Box 12  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img//portfolios/the softball logo design usa.webp" alt="custom cartoon mascot logo for podcast branding and sports media in Los Angeles, Houston, Toronto, Melbourne, and London" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Fun and vibrant cartoon-style mascot logo created for a softball-themed podcast. Designed for high-impact branding across digital platforms and merchandise.</p>
-
-    </div>
-    
-    <!-- Box 13  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img//portfolios/IMAGES.webp" alt="cartoon character images logo  vector conversion to high-quality EPS, CDR, AI formats for clients in New York, London, Sydney, Toronto, and Dubai" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3> <p>Converted a hand-drawn cartoon illustration into a crisp, scalable vector format (EPS, CDR, AI) while preserving character charm and detail — ideal for print, merch, and branding..</p>
-    </div>
-    
-    <!-- Box 14  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img//portfolios/Print Ready Artwork Manually Vector Tracing Low Rush Image to Vector High Rush.webp" alt="high-resolution logo vector conversion service in New York, Chicago, Toronto, Dubai, and London" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Transformed a low-resolution raster logo into clean, scalable vector artwork—perfect for high-quality printing, web use, and brand consistency.</p>
-
-    </div>
-    
-    <!-- Box 15  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img//portfolios/convert embroidery to vector.webp" alt="manual vector tracing  artwork for apparel and merchandise in Los Angeles, Dallas, Toronto, Berlin, and Melbourne" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3> <p>Manually traced an intricate embroidery-style eagle design into high-quality vector format — ideal for screen printing, apparel, and scalable branding.</p>
-
-    </div>
-    
-    <!-- Box 16  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img//portfolios/one color artwork (2).webp" alt="one-color vector artwork redraw for screen printing and branding in Austin, San Diego, Toronto, Berlin, and Melbourne" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>   <p>Recreated a detailed one-color illustration for screen printing and merchandise. Ideal for logos requiring clean, bold lines in monochrome format.</p>
-
-    </div>
-    
-    <!-- Box 17  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img//portfolios/wave fasion  branding .jpg.webp" alt="modern fashion brand identity design with logo application on merchandise and packaging in New York, London, Dubai, Milan, and Toronto" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Developed a bold and modern brand identity for Wave Fashion, featuring consistent logo application across packaging, merchandise, print materials, and vehicle graphics.</p>
-
-    </div>
-    
-    <!-- Box 18  -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img//portfolios/Yellow Luxury Open House ads design.webp" alt="luxury real estate flyer design for property marketing in Los Angeles, Miami, Dubai, Toronto, and London, web design in sandy-austrlia, texas, dallas, houston,austin, california, canada-toronto" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Professional flyer created to promote a luxury open house listing. Designed to highlight key property features, pricing, and contact details with bold visuals and clean layout.</p>
-
-    </div> 
-    </section>
-
- <section>
-   <div style="text-align: center; margin-top: 40px;">
-  <a href="portfolio.html" style="
-    display: inline-block;
-    padding: 14px 32px;
-    background: linear-gradient(to right, #2a72f8, #3fa6f9);
-    color: #fff;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 600;
-    border-radius: 50px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-    position: relative;
-  ">
-    👉 More Portfolios
-  </a>
-</div>
-</section>
+</html>
