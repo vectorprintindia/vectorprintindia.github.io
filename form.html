@@ -1,720 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Vector Artwork & Logo Redraw Services | USA, Canada, Australia, UK</title>
-    <meta name="description" content="View our portfolio of vector artwork, logo redraws, embroidery digitizing, and graphic design projects. Serving clients in USA, Canada, UK, and Australia.">
-    <meta name="keywords" content="vector artwork portfolio, logo design examples, embroidery digitizing samples, graphic design projects USA">
-
-    <!-- Favicon -->
-    <link href="assets/img/print1.png" rel="icon">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary: #1a3a6c;
-            --secondary: #e47117;
-            --accent: #ffc107;
-            --light: #f8f9fc;
-            --dark: #222;
-            --text: #444;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--secondary);
-            color: white;
-            border-radius: 50px;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.2rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-        
-        /* Header Styles */
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 60px;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 25px;
-        }
-        
-        .nav-menu a {
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-        }
-        
-        .nav-menu a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-menu a:hover:after {
-            width: 100%;
-        }
-        
-        .nav-menu a.active {
-            color: var(--secondary);
-        }
-        
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        .header-social {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .header-social a {
-            width: 36px;
-            height: 36px;
-            background: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .header-social a:hover {
-            background: var(--secondary);
-            color: white;
-        }
-        
-        /* Portfolio Hero Section */
-        .portfolio-hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 180px 0 100px;
-            text-align: center;
-        }
-        
-        .portfolio-hero h1 {
-            font-size: 2.8rem;
-            color: white;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-        }
-        
-        .portfolio-hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-        
-        /* Portfolio Filter */
-        .portfolio-filter {
-            background: white;
-            padding: 40px 0;
-        }
-        
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .filter-btn {
-            padding: 10px 25px;
-            background: var(--light);
-            border: none;
-            border-radius: 50px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--secondary);
-            color: white;
-        }
-        
-        /* Portfolio Grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            height: 300px;
-            background: white;
-        }
-        
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-overlay h3 {
-            color: white;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-        
-        .portfolio-overlay p {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        
-        .portfolio-overlay .btn {
-            padding: 8px 20px;
-            font-size: 0.9rem;
-        }
-        
-        /* Portfolio Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 2000;
-            overflow-y: auto;
-            padding: 50px 0;
-        }
-        
-        .modal-content {
-            background: white;
-            max-width: 900px;
-            margin: 0 auto;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(0,0,0,0.5);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            font-size: 1.2rem;
-        }
-        
-        .modal-body {
-            padding: 30px;
-        }
-        
-        .modal-image {
-            width: 100%;
-            height: 400px;
-            object-fit: contain;
-            background: #f5f5f5;
-            margin-bottom: 20px;
-        }
-        
-        .modal-title {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-        
-        .modal-category {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .modal-description {
-            margin-bottom: 20px;
-        }
-        
-        .modal-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-        
-        .detail-item {
-            background: var(--light);
-            padding: 15px;
-            border-radius: 5px;
-        }
-        
-        .detail-item h4 {
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-        
-        .detail-item p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            background: white;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
-        }
-        
-        .testimonial-card:before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--secondary);
-            opacity: 0.2;
-            position: absolute;
-            top: 10px;
-            left: 20px;
-        }
-        
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(rgba(26, 58, 108, 0.9), rgba(26, 58, 108, 0.9)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-        }
-        
-        .cta h2 {
-            color: white;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-        
-        .cta p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 60px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-col h3 {
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-col h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--secondary);
-        }
-        
-        .footer-col p {
-            margin-bottom: 20px;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: rgba(255,255,255,0.8);
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-        
-        .footer-contact li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .footer-contact i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-        }
-        
-        /* Mobile Styles */
-        @media (max-width: 992px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 50px;
-                transition: left 0.3s ease;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
-            
-            .nav-menu.active {
-                left: 0;
-            }
-            
-            .nav-menu li {
-                margin: 15px 0;
-            }
-            
-            .mobile-toggle {
-                display: block;
-            }
-            
-            .header-social {
-                display: none;
-            }
-            
-            .portfolio-hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .portfolio-hero p {
-                font-size: 1rem;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .modal-body {
-                padding: 20px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .portfolio-hero {
-                padding: 150px 0 80px;
-            }
-            
-            .portfolio-hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .filter-buttons {
-                gap: 10px;
-            }
-            
-            .filter-btn {
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .footer-contact li {
-                justify-content: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="/" class="logo">
-                <img src="https://vectorprintindia.in/assets/img/Vector%20Print%20India.png" alt="Vector Print Studio">
-            </a>
-            
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <ul class="nav-menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            
-            <div class="header-social">
-                <a href="https://wa.me/918141595426" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/vectorprintstudio" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Portfolio Hero Section -->
-    <section class="portfolio-hero">
-        <div class="container">
-            <h1>Our Portfolio</h1>
-            <p>Explore our collection of vector artwork, logo designs, embroidery digitizing, and graphic design projects created for clients worldwide.</p>
-            <a href="#contact" class="btn">Get a Free Quote</a>
-        </div>
-    </section>
-
-    <!-- Portfolio Filter -->
-    <section class="portfolio-filter">
-        <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="vector">Vector Artwork</button>
-                <button class="filter-btn" data-filter="logo">Logo Design</button>
-                <button class="filter-btn" data-filter="embroidery">Embroidery Digitizing</button>
-                <button class="filter-btn" data-filter="graphic">Graphic Design</button>
-                <button class="filter-btn" data-filter="mockup">Product Mockups</button>
-            </div>
-        </div>
-    </section>
-
-   
-    <!-- Portfolio Section -->
+ <!-- Portfolio Section -->
 <section id="samples" style="padding: 60px 20px; background-color: #f9f9f9; position: relative; z-index: 1;">
   <div style="text-align: center; margin-bottom: 40px;">
     <h2 style="font-size: 32px; color: #222;">Our <span style="color: #e47117;">Sample Works</span></h2>
@@ -725,60 +9,131 @@
 
     <!-- Box 1 -->
     <div onclick="openModal('img1')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/sample-logo-vector-tracing.jpg" alt="vector artwork tracing in canada, sandly au,uk, Tx-usa" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Vector Artwork</h3>
+      <img src="assets/img/portfolios/Car Design .webp" alt="vector artwork in canada,sandly au,uk,logo design houson tx,remove background services dallas tx" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Vector Artwork</h3> <p>High-detail vector illustration with a modern artistic touch</p>
+                
     </div>
 
     <!-- Box 2 -->
     <div onclick="openModal('img2')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/car banner.jpg" alt="Promotional mockup , virtual proof and business promotional product design services in usa, sandy australia" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Graphic Design</h3>
+      <img src="assets/img/portfolios/Flyer Poster Design Services.webp" alt="vector artwork poster design and event branding in Los Angeles, Dallas, Melbourne, and Miami" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Graphic Design</h3> <p>Bold and sleek poster artwork inspired by Ferrari aesthetics</p>
     </div>
 
-    <!-- Box 3 - Local Image -->
+    <!-- Box 3  -->
     <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
-    </div>
+      <img src="assets/img/portfolios/logo Vector Tracing USA.webp" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support australiya sandy, canada" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Unique vintage-style vector art created for apparel and merchandise</p>
 
-     <!-- Box 3 - Local Image -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
     </div>
-
-     <!-- Box 3 - Local Image -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
-    </div>
-
-     <!-- Box 3 - Local Image -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
-    </div>
-
-     <!-- Box 3 - Local Image -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
-    </div>
-
-     <!-- Box 3 - Local Image -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
-    </div>
-
-     <!-- Box 3 - Local Image -->
-    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
-      <img src="assets/img/Car Design .jpg" alt="Embroidery digitizing and stitch file design – Canada and UK apparel vector support" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
-      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>
-    </div>
-
     
-  </div>
+    <!-- Box 4  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/portfolios/Vector Artwork Logo Design Services California.webp" alt="vector logo design in Houston, Alberta, South Africa, and Chicago, australia" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Custom vector logo crafted for a professional transportation business </p>
+
+    </div>
+    
+    <!-- Box 5  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/portfolios/Logo Design - Divine Posh.webp" alt="luxury salon and beauty brand logo design for premium hair businesses in Florida, Ontario, New York City, and Melbourne" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Elegant brand identity created for a premium hair and beauty business</p>
+
+    </div>
+    
+    <!-- Box 6  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/portfolios/Raster-to-Vector-Artwork-01.webp" alt="detailed embroidery-ready vector artwork for patches and events in Washington D.C., Denver, Sydney, and British Columbia, australia sandy" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3> <p>High-accuracy vector recreation of a patch-style logo for scalable use</p>
+
+    </div>
+    
+    <!-- Box 7  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/portfolios/image-raster-to-vector-services-usa.webp" alt="high-quality vector logo conversion service businesses in Texas, Vancouver, Miami, Melbourne, and South Africa-sandy Australia" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Clean and scalable vector conversion for handyman business logo design</p>
+
+    </div>
+    
+    <!-- Box 8  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/portfolios/raster-to-vector-conversion-low-rush-image-to-EPS.webp" alt="detailed vector logo design tracing for apparel and merchandise in Houston, Dallas, Chicago, Sydney, and Toronto-canada" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Clean vector redraw of a bold sports-themed logo for apparel and merchandise</p>
+
+    </div>
+
+
+<!-- Box 9  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img//portfolios/Raster-to-Vector-Artwork.webp" alt="high-impact vector logo for sports teams, schools, and apparel in New York, Calgary, Brisbane, Los Angeles, and Ontario" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>   <p>Bold vector recreation of a sports mascot logo for apparel, print, and team branding</p>
+
+    </div>
+    
+    <!-- Box 10  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img/portfolios/Detailed-Vector-Tracing-Artwork-Provider.webp" alt="Low Rush logo manually vector traced for apparel printing and branding in USA, Canada, Australia, South Africa, and more" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Low Rush Logo Manual Vector Tracing</p>
+
+    </div>
+    
+    <!-- Box 11  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img//portfolios/logo design services in canada .webp" alt="luxury bar and lounge logo design for nightlife branding in New York, Dubai, London, Toronto, and Los Angeles" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3> <p>Refined and stylish logo created for a modern bar and lounge, blending luxury with nightlife appeal.</p>
+
+    </div>
+    
+    <!-- Box 12  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img//portfolios/the softball logo design usa.webp" alt="custom cartoon mascot logo for podcast branding and sports media in Los Angeles, Houston, Toronto, Melbourne, and London" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Fun and vibrant cartoon-style mascot logo created for a softball-themed podcast. Designed for high-impact branding across digital platforms and merchandise.</p>
+
+    </div>
+    
+    <!-- Box 13  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img//portfolios/IMAGES.webp" alt="cartoon character images logo  vector conversion to high-quality EPS, CDR, AI formats for clients in New York, London, Sydney, Toronto, and Dubai" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3> <p>Converted a hand-drawn cartoon illustration into a crisp, scalable vector format (EPS, CDR, AI) while preserving character charm and detail — ideal for print, merch, and branding..</p>
+    </div>
+    
+    <!-- Box 14  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img//portfolios/Print Ready Artwork Manually Vector Tracing Low Rush Image to Vector High Rush.webp" alt="high-resolution logo vector conversion service in New York, Chicago, Toronto, Dubai, and London" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Transformed a low-resolution raster logo into clean, scalable vector artwork—perfect for high-quality printing, web use, and brand consistency.</p>
+
+    </div>
+    
+    <!-- Box 15  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img//portfolios/convert embroidery to vector.webp" alt="manual vector tracing  artwork for apparel and merchandise in Los Angeles, Dallas, Toronto, Berlin, and Melbourne" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3> <p>Manually traced an intricate embroidery-style eagle design into high-quality vector format — ideal for screen printing, apparel, and scalable branding.</p>
+
+    </div>
+    
+    <!-- Box 16  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img//portfolios/one color artwork (2).webp" alt="one-color vector artwork redraw for screen printing and branding in Austin, San Diego, Toronto, Berlin, and Melbourne" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>   <p>Recreated a detailed one-color illustration for screen printing and merchandise. Ideal for logos requiring clean, bold lines in monochrome format.</p>
+
+    </div>
+    
+    <!-- Box 17  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img//portfolios/wave fasion  branding .jpg.webp" alt="modern fashion brand identity design with logo application on merchandise and packaging in New York, London, Dubai, Milan, and Toronto" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Developed a bold and modern brand identity for Wave Fashion, featuring consistent logo application across packaging, merchandise, print materials, and vehicle graphics.</p>
+
+    </div>
+    
+    <!-- Box 18  -->
+    <div onclick="openModal('img3')" style="cursor: pointer; flex: 1 1 300px; background: #fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s;" onmouseover="hoverEffect(this)" onmouseout="resetEffect(this)">
+      <img src="assets/img//portfolios/Yellow Luxury Open House ads design.webp" alt="luxury real estate flyer design for property marketing in Los Angeles, Miami, Dubai, Toronto, and London, web design in sandy-austrlia, texas, dallas, houston,austin, california, canada-toronto" style="width: 100%; max-width: 100%; height: auto; max-height: 250px; object-fit: contain; border-radius: 10px; margin-bottom: 10px;" />
+      <h3 style="font-size: 20px; color: #333;">Custom Design</h3>  <p>Professional flyer created to promote a luxury open house listing. Designed to highlight key property features, pricing, and contact details with bold visuals and clean layout.</p>
+
+    </div> 
+    </section>
+
+ <section>
    <div style="text-align: center; margin-top: 40px;">
   <a href="portfolio.html" style="
     display: inline-block;
@@ -797,158 +152,3 @@
   </a>
 </div>
 </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Client Testimonials</h2>
-                <p>What our clients say about our work</p>
-            </div>
-            
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p>"The vector artwork provided was exactly what we needed for our large format printing. The attention to detail was impressive."</p>
-                    <div class="testimonial-author">Mark T. (Houston, TX)</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p>"Our logo looks crisp and professional across all platforms after the vector conversion. Great service and fast turnaround!"</p>
-                    <div class="testimonial-author">Sarah K. (Toronto, Canada)</div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p>"The embroidery digitizing work was perfect for our company uniforms. The stitching came out clean and precise."</p>
-                    <div class="testimonial-author">James L. (London, UK)</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta" id="contact">
-        <div class="container">
-            <h2>Ready to Start Your Project?</h2>
-            <p>Contact us today for a free quote and let's bring your design ideas to life.</p>
-            <a href="contact.html" class="btn">Get Free Quote</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>About Us</h3>
-                    <p>Vector Print Studio offers high-quality graphic design, vector tracing, logo redraws, mockups, web solutions, and back-office support to clients across the globe.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/918141595426" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://instagram.com/vectorprintstudio" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Vector Tracing</a></li>
-                        <li><a href="#">Logo Design</a></li>
-                        <li><a href="#">Embroidery Digitizing</a></li>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Graphic Design</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Contact Us</h3>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i><p>V.O. Houston, TX & Production Office in Virpur, Gujarat, India</p></li> 
-                         <li><i class="fas fa-phone-alt"></i> +91 81415 95426</li>
-                        <li><i class="fas fa-envelope"></i> hello@vectorprintindia.in</li>
-                        <li><i class="fas fa-clock"></i> Mon–Fri: 9:00 AM – 6:00 PM (CDT)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Vector Print Studio. All Rights Reserved. | Serving Houston TX and Worldwide</p>
-            </div>
-        </div>
-    </footer>
-
-   
-
-    <!-- JavaScript -->
-    <script>
-        // Mobile Navigation Toggle
-        document.querySelector('.mobile-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-menu').classList.remove('active');
-            });
-        });
-        
-       
-      
-       
-        
-        // Close modal
-        modalClose.addEventListener('click', () => {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-    </script>
-</body>
-</html>
