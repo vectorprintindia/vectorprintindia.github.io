@@ -1720,8 +1720,6 @@ I’m Girish, the Founder of Vector Print Studio. Our team of 10 skilled designe
             </div>
         </div>
     </section>
-
-
 <!--Free Trial Form -->
     <form id="freeTrialForm" style="max-width:600px;margin:50px auto;padding:40px;border-radius:16px;background:#f9f9f9;box-shadow:0 15px 25px rgba(0,0,0,0.2);font-family:Arial,sans-serif;transition:0.3s;">
       <h2 style="text-align:center;color:#007BFF;margin-bottom:25px;font-size:28px;">Start Free Trial / ZERO COST 😍</h2>
@@ -1773,6 +1771,130 @@ I’m Girish, the Founder of Vector Print Studio. Our team of 10 skilled designe
         <button onclick="closePopup()" style="padding:10px 20px;background:#007BFF;color:#fff;border:none;border-radius:8px;font-size:16px;cursor:pointer;">OK</button>
       </div>
     </div>
+
+<script>
+    // Floating label animation
+    const inputs = document.querySelectorAll('#freeTrialForm input, #freeTrialForm textarea');
+    inputs.forEach(input => {
+      const label = input.nextElementSibling;
+      input.addEventListener('focus', () => {
+        input.style.borderColor = '#007BFF';
+        input.style.boxShadow = '0 0 10px rgba(0,123,255,0.3)';
+        if(label){
+          label.style.top = '-10px';
+          label.style.left = '10px';
+          label.style.fontSize = '12px';
+          label.style.color = '#007BFF';
+        }
+      });
+      input.addEventListener('blur', () => {
+        if(!input.value && label){
+          label.style.top = '14px';
+          label.style.left = '12px';
+          label.style.fontSize = '14px';
+          label.style.color = '#555';
+        }
+        input.style.borderColor = '#ccc';
+        input.style.boxShadow = 'none';
+      });
+    });
+
+    // Form submission
+    const form = document.getElementById("freeTrialForm");
+    const submitButton = document.getElementById("submitButton");
+    const buttonText = document.getElementById("buttonText");
+    
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      
+      // Show loading state on button
+      submitButton.disabled = true;
+      buttonText.innerHTML = '<span class="spinner"></span> Processing...';
+      
+      // Show success popup immediately
+      setTimeout(() => {
+        showPopup();
+        
+        // Reset form
+        form.reset();
+        
+        // Reset floating labels
+        inputs.forEach(input => {
+          const label = input.nextElementSibling;
+          if(label){
+            label.style.top = '14px';
+            label.style.left = '12px';
+            label.style.fontSize = '14px';
+            label.style.color = '#555';
+          }
+        });
+        
+        // Reset button after a short delay
+        setTimeout(() => {
+          submitButton.disabled = false;
+          buttonText.textContent = 'Start Free Trial';
+        }, 2000);
+      }, 500); // Small delay to simulate processing
+      
+      // Send data to Google Apps Script in background
+      sendDataToGoogle();
+    });
+
+    function sendDataToGoogle() {
+      const fileInput = form.querySelector('input[name="file"]');
+      const file = fileInput.files[0];
+      
+      if(file){
+        const reader = new FileReader();
+        reader.onload = function(evt){
+          sendData(evt.target.result.split(',')[1], file);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        sendData();
+      }
+    }
+
+    function sendData(fileBase64, file){
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value,
+        fileBase64: fileBase64 || "",
+        fileName: file ? file.name : "",
+        fileType: file ? file.type : ""
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbxnhdj683NRNaG4-76-ZR5pcBl63dCKO6cSmjEF3ndM-hlx5wtM7YZNn4eJTFW45qA0og/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(res => {
+        // Data sent successfully (we don't need to show anything to user)
+        console.log("Data sent to Google Sheets successfully");
+      })
+      .catch(err => {
+        console.error("Error sending data to Google Sheets:", err);
+        // We don't show error to user since we already showed success
+      });
+    }
+
+    // Show popup
+    function showPopup(){
+      document.getElementById("successPopup").style.display = "flex";
+    }
+
+    // Close popup
+    function closePopup(){
+      document.getElementById("successPopup").style.display = "none";
+    }
+    </script>
+
+
+
+
 
 
 
@@ -2010,123 +2132,7 @@ I’m Girish, the Founder of Vector Print Studio. Our team of 10 skilled designe
         
         // Set up a daily check to update the banner (optional)
         setInterval(updateBanner, 3600000); // Check every hour
-    // Floating label animation
-    const inputs = document.querySelectorAll('#freeTrialForm input, #freeTrialForm textarea');
-    inputs.forEach(input => {
-      const label = input.nextElementSibling;
-      input.addEventListener('focus', () => {
-        input.style.borderColor = '#007BFF';
-        input.style.boxShadow = '0 0 10px rgba(0,123,255,0.3)';
-        if(label){
-          label.style.top = '-10px';
-          label.style.left = '10px';
-          label.style.fontSize = '12px';
-          label.style.color = '#007BFF';
-        }
-      });
-      input.addEventListener('blur', () => {
-        if(!input.value && label){
-          label.style.top = '14px';
-          label.style.left = '12px';
-          label.style.fontSize = '14px';
-          label.style.color = '#555';
-        }
-        input.style.borderColor = '#ccc';
-        input.style.boxShadow = 'none';
-      });
-    });
-
-    // Form submission
-    const form = document.getElementById("freeTrialForm");
-    const submitButton = document.getElementById("submitButton");
-    const buttonText = document.getElementById("buttonText");
-    
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      
-      // Show loading state on button
-      submitButton.disabled = true;
-      buttonText.innerHTML = '<span class="spinner"></span> Processing...';
-      
-      // Show success popup immediately
-      setTimeout(() => {
-        showPopup();
-        
-        // Reset form
-        form.reset();
-        
-        // Reset floating labels
-        inputs.forEach(input => {
-          const label = input.nextElementSibling;
-          if(label){
-            label.style.top = '14px';
-            label.style.left = '12px';
-            label.style.fontSize = '14px';
-            label.style.color = '#555';
-          }
-        });
-        
-        // Reset button after a short delay
-        setTimeout(() => {
-          submitButton.disabled = false;
-          buttonText.textContent = 'Start Free Trial';
-        }, 2000);
-      }, 500); // Small delay to simulate processing
-      
-      // Send data to Google Apps Script in background
-      sendDataToGoogle();
-    });
-
-    function sendDataToGoogle() {
-      const fileInput = form.querySelector('input[name="file"]');
-      const file = fileInput.files[0];
-      
-      if(file){
-        const reader = new FileReader();
-        reader.onload = function(evt){
-          sendData(evt.target.result.split(',')[1], file);
-        };
-        reader.readAsDataURL(file);
-      } else {
-        sendData();
-      }
-    }
-
-    function sendData(fileBase64, file){
-      const data = {
-        name: form.name.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        message: form.message.value,
-        fileBase64: fileBase64 || "",
-        fileName: file ? file.name : "",
-        fileType: file ? file.type : ""
-      };
-
-      fetch("https://script.google.com/macros/s/AKfycbxnhdj683NRNaG4-76-ZR5pcBl63dCKO6cSmjEF3ndM-hlx5wtM7YZNn4eJTFW45qA0og/exec", {
-        method: "POST",
-        body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(res => {
-        // Data sent successfully (we don't need to show anything to user)
-        console.log("Data sent to Google Sheets successfully");
-      })
-      .catch(err => {
-        console.error("Error sending data to Google Sheets:", err);
-        // We don't show error to user since we already showed success
-      });
-    }
-
-    // Show popup
-    function showPopup(){
-      document.getElementById("successPopup").style.display = "flex";
-    }
-
-    // Close popup
-    function closePopup(){
-      document.getElementById("successPopup").style.display = "none";
-    }
+  
     </script>
 
 </body>
